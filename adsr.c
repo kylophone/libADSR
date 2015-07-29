@@ -8,7 +8,6 @@ float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, floa
   } else if (sample_number > A_LENGTH + D_LENGTH) {
     /* SUSTAIN */
     return S_LEVEL;
-    //return 1.0;
   } else if (sample_number > A_LENGTH) {
     /* DECAY */
     return S_LEVEL - (S_LEVEL - 1.0 - ((S_LEVEL - 1.0) * log(1.0 + (((float) (sample_number - A_LENGTH) / D_LENGTH) * (M_E - 1)))));
