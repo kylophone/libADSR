@@ -2,6 +2,9 @@
 
 float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, float S_LEVEL, int sample_number)
 {
+  if (S_LEVEL < 0.0) S_LEVEL = 0.0;
+  if (S_LEVEL > 1.0) S_LEVEL = 1.0;
+  
   if (sample_number > A_LENGTH + D_LENGTH + S_LENGTH + R_LENGTH) {
     return 0.0;  
   } else if (sample_number > A_LENGTH + D_LENGTH + S_LENGTH) {
