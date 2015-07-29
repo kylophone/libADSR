@@ -18,8 +18,8 @@ int main(void) {
 
 	for (int i = 0; i < NUM_SAMPLES; i++) { 
 		float sample = sin(2 * M_PI * FREQ * i / SAMPLING_RATE);
-    sample *= adsr_envelope(A_LENGTH, D_LENGTH, S_LENGTH, R_LENGTH, S_LEVEL, i);
-    fwrite(&sample, sizeof(float), 1, file);
+		sample *= adsr_envelope(A_LENGTH, D_LENGTH, S_LENGTH, R_LENGTH, S_LEVEL, i);
+		fwrite(&sample, sizeof(float), 1, file);
 	}
 	fclose(file);
 }
