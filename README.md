@@ -18,14 +18,14 @@
 #define FREQ 1000
 
 int main(void) {
-	FILE *file = fopen("example.raw", "wb");
+  FILE *file = fopen("example.raw", "wb");
 
-	for (int i = 0; i < NUM_SAMPLES; i++) { 
-		float sample = sin(2 * M_PI * FREQ * i / SAMPLING_RATE);
-		sample *= adsr_envelope(A_LENGTH, D_LENGTH, S_LENGTH, R_LENGTH, S_LEVEL, i);
-		fwrite(&sample, sizeof(float), 1, file);
-	}
-	fclose(file);
+  for (int i = 0; i < NUM_SAMPLES; i++) { 
+    float sample = sin(2 * M_PI * FREQ * i / SAMPLING_RATE);
+    sample *= adsr_envelope(A_LENGTH, D_LENGTH, S_LENGTH, R_LENGTH, S_LEVEL, i);
+    fwrite(&sample, sizeof(float), 1, file);
+  }
+  fclose(file);
 }
 
 //Creates a file (`example.raw`) containing a 1k sine tone with an ADSR envelope.
