@@ -1,5 +1,9 @@
 #include <math.h>
 
+#ifndef M_E
+#define M_E 2.7182818284590452354
+#endif
+
 float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, float S_LEVEL, int sample_number)
 {
   if (S_LEVEL < 0.0) S_LEVEL = 0.0;
