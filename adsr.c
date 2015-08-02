@@ -4,6 +4,10 @@
 #define M_E 2.7182818284590452354
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, float S_LEVEL, int sample_number)
 {
   if (S_LEVEL < 0.0) S_LEVEL = 0.0;
@@ -26,3 +30,7 @@ float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, floa
     return log(1.0 + ((float) sample_number / A_LENGTH * (M_E - 1))); 
   }
 }
+
+#ifdef __cplusplus
+}
+#endif
