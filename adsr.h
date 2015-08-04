@@ -10,4 +10,12 @@
     sample_number   Compute ADSR envelope value for this sample.
 */
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 float adsr_envelope(int A_LENGTH, int D_LENGTH, int S_LENGTH, int R_LENGTH, float S_LEVEL, int sample_number);
+
+#ifdef __cplusplus
+}
+#endif
