@@ -1,4 +1,4 @@
-/*
+/**
   adsr_envelope
     Returns a float between 0.0 and 1.0 - This is your ADSR envelope.
     
