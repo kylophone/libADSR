@@ -1,8 +1,8 @@
 # libADSR 
 A Tiny ADSR C Library. Useful for Audio DSP & Synthesis. 
-##output
+## output
 <img src = "adsr.png"/>
-##example.c
+## example.c
 ```c
 #include <stdio.h>
 #include <stdlib.h>
